@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/src/main/java/it/uniba/app/Engine.java" dialect="H2" />
+    <file url="file://$PROJECT_DIR$/src/main/java/it/uniba/app/gioco/Dungeon.java" dialect="H2" />
+    <file url="file://$PROJECT_DIR$/src/main/java/it/uniba/app/server/MapData.java" dialect="H2" />
+    <file url="file://$PROJECT_DIR$/src/main/java/it/uniba/app/server/MapServer.java" dialect="H2" />
+  </component>
+</project>

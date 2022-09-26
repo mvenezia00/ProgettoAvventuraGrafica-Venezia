@@ -1,0 +1,175 @@
+@startuml
+class it.uniba.app.Parser {
+- Set<String> stopwords
+- int checkForCommand(String,List<Command>)
++ ParserOutput parse(String,List<Command>)
+}
+class it.uniba.app.CommandList {
++ Command create(int)
+}
+class it.uniba.app.Music {
++ {static} void playMusic(String)
++ void run()
+}
+class it.uniba.app.MapData {
++ void addName(String)
++ void sendMap(String,String)
++ String retrieveMap(String)
+}
+class it.uniba.app.Room {
+- int id
+- String name
+- String description
+- String look
+- boolean deadly
+- int south
+- int north
+- int east
+- int west
++ String getName()
++ String getDescription()
++ String getLook()
++ int getId()
++ boolean isDeadly()
++ int getSouth()
++ int getNorth()
++ int getEast()
++ int getWest()
++ int hashCode()
++ boolean equals(Object)
+}
+class it.uniba.app.DungeonBoundary {
++ {static} void dungeonMessages(String,String)
++ {static} void endMessages(int)
++ {static} void retryMessages(int)
++ {static} void actionMessages(int)
++ {static} void saveMessages(int)
++ {static} void loadMessages(String)
++ {static} void newGameMessage()
+}
+class it.uniba.app.MapClient {
++ {static} void manageMappe(String,String)
+- {static} String loadMappe(String)
+}
+class it.uniba.app.MapClient.ClientThread {
+- BufferedReader in
+- boolean run
++ void run()
++ void setRun(boolean)
+}
+abstract class it.uniba.app.GameDescription {
+- List<Room> rooms
+- List<Command> commands
+- Room currentRoom
+- int tentativi
++ List<Room> getRooms()
++ List<Command> getCommands()
++ Room getCurrentRoom()
++ void setCurrentRoom(Room)
++ int getTentativi()
++ void setTentativi(int)
++ {abstract}void init()
++ {abstract}void nextMove(ParserOutput,PrintStream)
+}
+class it.uniba.app.Utils {
++ {static} Set<String> loadFileListInSet(File)
++ {static} List<String> parseString(String,Set<String>)
+}
+class it.uniba.app.Dungeon {
++ void init()
++ void nextMove(ParserOutput,PrintStream)
+- void end(Room)
+- int newGame()
+- void loadGame()
+- void endGame()
+}
+class it.uniba.app.TimeAPI {
++ {static} String getTime()
+}
+enum it.uniba.app.CommandType {
++  END
++  NORD
++  SOUTH
++  EAST
++  WEST
++  PUSH
++  PULL
++  WALK_TO
++  PICK_UP
++  TALK_TO
++  GIVE
++  USE
++  LOOK_AT
++  TURN_ON
++  TURN_OFF
++  HELP
++  SAVE
+}
+class it.uniba.app.CommandNotExistException {
+}
+class it.uniba.app.EngineBoundary {
++ {static} int get_welcome_message(GameDescription)
++ {static} void command_not_exist()
++ {static} void exit()
+}
+class it.uniba.app.MapNotFoundException {
+}
+class it.uniba.app.MapServer {
++ {static} void main(String[])
+}
+class it.uniba.app.ServernotAvailableException {
+}
+class it.uniba.app.Command {
+- CommandType type
+- String name
+- Set<String> alias
++ String getName()
++ Set<String> getAlias()
++ void setAlias(String[])
++ CommandType getType()
++ int hashCode()
++ boolean equals(Object)
+}
+class it.uniba.app.EmptyMapException {
+}
+class it.uniba.app.MapAlreadyExistException {
+}
+class it.uniba.app.MapServerThread {
+- Socket socket
+- MapData md
+- boolean run
+- PrintWriter out
++ void run()
+}
+class it.uniba.app.ExceptionsBoundary {
++ {static} void fileNotFound()
++ {static} void emptyMapException()
++ {static} void fileCreated()
++ {static} void serverError()
+}
+class it.uniba.app.Engine {
+- GameDescription game
+- Parser parser
++ void execute()
++ {static} void main(String[])
+}
+class it.uniba.app.ParserOutput {
+- Command command
++ Command getCommand()
+}
+class it.uniba.app.FileCleaner {
++ {static} void clean()
+}
+
+
+it.uniba.app.Runnable <|.. it.uniba.app.Music
+it.uniba.app.MapClient +.. it.uniba.app.MapClient.ClientThread
+it.uniba.app.Thread <|-- it.uniba.app.MapClient.ClientThread
+it.uniba.app.GameDescription <|-- it.uniba.app.Dungeon
+it.uniba.app.Exception <|-- it.uniba.app.CommandNotExistException
+it.uniba.app.Exception <|-- it.uniba.app.MapNotFoundException
+it.uniba.app.Exception <|-- it.uniba.app.ServernotAvailableException
+it.uniba.app.Exception <|-- it.uniba.app.EmptyMapException
+it.uniba.app.Exception <|-- it.uniba.app.MapAlreadyExistException
+it.uniba.app.Thread <|-- it.uniba.app.MapServerThread
+@enduml

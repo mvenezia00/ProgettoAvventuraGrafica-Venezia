@@ -1,0 +1,11 @@
+ID;DESC;DEAD;SUD;EST;OVEST;NORD;NOME;LOOK; 
+0;PALLY SCE POP;false;-1;-1;-1;1;Esterno;Sei in un bosco molto fitto ed è notte. Davanti a te c'è un ingresso\nmeglio entrare subito.\n;
+1;Ti trovi in quello che sembra una lunga galleria.\n Ci sono delle strane pietre luminose che illuminano la galleria.\n;false;0;-1;-1;2;Ingresso;Non c'è nulla di interessante qui. In fondo alla galleria vedi quello che sembra la prima stanza\n di un dungeon. Sai, quelli che eri solito vedere in alcuni gdr.\n;
+2;Ti trovi nella prima stanza del dungeon.\n Per terra ci sono macchie di sangue e c'è odore di marcio.\n;false;1;4;-1;3;Prima Stanza;La stanza è completamente spoglia, ma noti una spada per terra.\n;
+3;Stanza Trappola;true;-1;-1;-1;-1;Stanza Segreta;E' stato bello...;
+4;Sei nella seconda stanza del dungeon.\n Sei emozionato, vuoi arrivare fino in fondo per cercare il tesoro del dungeon.\n;false;5;-1;2;6;Seconda Stanza;La stanza è spoglia.\n Noti una porta a ovest. \n Vedo una porta per ogni lato.;
+5;Sei nella terza stanza del dungeon.\n C'e' uno scrigno dinanzi te.\n;false;-1;7;-1;4;Terza Stanza;Non c'e' nulla di interessante. Vedo una porta a Nord ed una ad Est.;
+6;Oh no, Mostri...\n;false;4;-1;-1;-1;Stanza Mostri;Oh no, Mostri.. Per  a guardare meglio sembrano pietrificati.\n C'e'solo la porta a sud da dove sono entrato;
+7;Sei nella quarta stanza del dungeon.\n;false;-1;-1;5;8;Quarta Stanza;Non c'è nulla di particolare. Vedo una porta a Nord ed una ad Ovest.;
+8;Sei nella quinta stanza del dungeon.\n;false;7;3;4;9;Quinta Stanza;Non c'è nulla di interessante. Vedo una porta per ogni lato.;
+9;Sei nell'ultima stanza del piano.\n Davanti a te si apre un portale con una forte luce e decidi di entrare.\n Ti risvegli. Intorno a te si sono radunate tante persone preoccupate.\n Ti alzi e torni a casa pensando al sogno e al suo significato...\n";false;8;-1;-1;99;Checkpoint;Fine;
